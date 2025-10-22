@@ -30,6 +30,3 @@ Thumbs.db
 # Database
 *.db
 *.sqlite
-
-# Menu Controller
-server/src/controllers/menuController.ts
