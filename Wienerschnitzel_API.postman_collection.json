@@ -1,0 +1,317 @@
+{
+  "info": {
+    "name": "Wienerschnitzel API",
+    "description": "Complete API collection for Wienerschnitzel restaurant system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000/api"
+    }
+  ],
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories"]
+            }
+          }
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Category\",\n  \"description\": \"Category description\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories"]
+            }
+          }
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Category\",\n  \"description\": \"Updated description\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/categories/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/categories/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["categories", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Menu Items",
+      "item": [
+        {
+          "name": "Get All Menu Items",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/menu",
+              "host": ["{{baseUrl}}"],
+              "path": ["menu"]
+            }
+          }
+        },
+        {
+          "name": "Get Menu Items by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/menu?category=1",
+              "host": ["{{baseUrl}}"],
+              "path": ["menu"],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Menu Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Item\",\n  \"description\": \"Item description\",\n  \"price\": 9.99,\n  \"category_id\": 1,\n  \"image_url\": \"https://example.com/image.jpg\",\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/menu",
+              "host": ["{{baseUrl}}"],
+              "path": ["menu"]
+            }
+          }
+        },
+        {
+          "name": "Update Menu Item",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Item\",\n  \"description\": \"Updated description\",\n  \"price\": 12.99,\n  \"category_id\": 1,\n  \"image_url\": \"https://example.com/updated.jpg\",\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/menu/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["menu", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Menu Item",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/menu/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["menu", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Add-ons",
+      "item": [
+        {
+          "name": "Get All Add-ons",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/addons",
+              "host": ["{{baseUrl}}"],
+              "path": ["addons"]
+            }
+          }
+        },
+        {
+          "name": "Create Add-on",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Add-on\",\n  \"price\": 1.99\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/addons",
+              "host": ["{{baseUrl}}"],
+              "path": ["addons"]
+            }
+          }
+        },
+        {
+          "name": "Update Add-on",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Add-on\",\n  \"price\": 2.49\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/addons/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["addons", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Add-on",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/addons/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["addons", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": ["{{baseUrl}}"],
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "Get Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/orders/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["orders", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer\": {\n    \"name\": \"John Doe\",\n    \"phone\": \"555-1234\",\n    \"email\": \"john@example.com\"\n  },\n  \"items\": [\n    {\n      \"menu_item_id\": 1,\n      \"quantity\": 2,\n      \"addons\": [1, 2]\n    },\n    {\n      \"menu_item_id\": 3,\n      \"quantity\": 1,\n      \"addons\": []\n    }\n  ],\n  \"total\": 25.97\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders",
+              "host": ["{{baseUrl}}"],
+              "path": ["orders"]
+            }
+          }
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"preparing\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/orders/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["orders", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
